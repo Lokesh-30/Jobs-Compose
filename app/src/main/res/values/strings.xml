@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">android-dashboard-problem</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="job_stats">Job Stats</string>
+    <string name="invoice_stat">Invoice Stat</string>
+    <string name="total_value_jobs">Total value $%1$s Jobs</string>
+    <string name="collected">$%1$s collected</string>
+    <string name="hello_lokesh">Hello, Lokesh! \uD83D\uDC4B</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="back_button">Back Button</string>
+    <string name="tab_header">%1$s (%2$s)</string>
+    <string name="job_number">#%1$s</string>
+    <string name="jobs_count">%1$s Jobs</string>
+    <string name="jobs_completed">%1$s of %2$s completed</string>
+    <string name="item_count">%1$s (%2$s)</string>
+</resources>
