@@ -1,4 +1,4 @@
-package zuper.dev.android.dashboard.screen
+package zuper.dev.android.dashboard.presentation.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -28,6 +28,7 @@ import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -44,7 +45,7 @@ import zuper.dev.android.dashboard.data.model.FilteredJobs
 import zuper.dev.android.dashboard.data.model.JobApiModel
 import zuper.dev.android.dashboard.data.model.JobStatus
 import zuper.dev.android.dashboard.data.viewmodel.DataViewModel
-import zuper.dev.android.dashboard.ui.theme.Typography
+import zuper.dev.android.dashboard.presentation.ui.theme.Typography
 import zuper.dev.android.dashboard.widjets.ChartView
 import zuper.dev.android.dashboard.widjets.MyCard
 import zuper.dev.android.dashboard.widjets.Utils
@@ -91,10 +92,9 @@ fun StatScreen(navController: NavController, count: String?) {
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun StatContent(innerPadding: PaddingValues, dataViewModel: DataViewModel) {
-    val isLoading by dataViewModel.isLoading
-    val jobsStat by dataViewModel.jobs
+    val state = dataViewModel.state.collectAsState()
     val pullRefreshState = rememberPullRefreshState(
-        refreshing = isLoading,
+        refreshing = state.value.isLoading,
         onRefresh = dataViewModel::getJobs
     )
     Box(
@@ -110,13 +110,13 @@ fun StatContent(innerPadding: PaddingValues, dataViewModel: DataViewModel) {
             ChartView(
                 modifier = Modifier
                     .padding(20.dp),
-                jobStat = jobsStat
+                jobStat = state.value.jobs
             )
             Divider(thickness = 0.5.dp)
-            TabView(jobsStat)
+            TabView(state.value.jobs)
         }
         PullRefreshIndicator(
-            refreshing = isLoading,
+            refreshing = state.value.isLoading,
             state = pullRefreshState,
             modifier = Modifier.align(Alignment.TopCenter)
         )
