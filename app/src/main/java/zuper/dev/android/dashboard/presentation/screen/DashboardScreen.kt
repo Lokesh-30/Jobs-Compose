@@ -1,4 +1,4 @@
-package zuper.dev.android.dashboard.screen
+package zuper.dev.android.dashboard.presentation.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -36,7 +36,7 @@ import zuper.dev.android.dashboard.data.model.FilteredJobs
 import zuper.dev.android.dashboard.data.model.InvoiceStatus
 import zuper.dev.android.dashboard.data.model.JobStatus
 import zuper.dev.android.dashboard.data.viewmodel.DataViewModel
-import zuper.dev.android.dashboard.ui.theme.Typography
+import zuper.dev.android.dashboard.presentation.ui.theme.Typography
 import zuper.dev.android.dashboard.widjets.AppScreens
 import zuper.dev.android.dashboard.widjets.BarChart
 import zuper.dev.android.dashboard.widjets.ChartRow

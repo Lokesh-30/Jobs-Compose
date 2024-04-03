@@ -1,4 +1,4 @@
-package zuper.dev.android.dashboard.ui.theme
+package zuper.dev.android.dashboard.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

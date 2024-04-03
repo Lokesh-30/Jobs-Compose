@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import zuper.dev.android.dashboard.screen.DashboardScreen
-import zuper.dev.android.dashboard.screen.StatScreen
+import zuper.dev.android.dashboard.presentation.screen.DashboardScreen
+import zuper.dev.android.dashboard.presentation.screen.StatScreen
 import zuper.dev.android.dashboard.widjets.AppScreens
 
 /**

@@ -31,8 +31,8 @@ import zuper.dev.android.dashboard.data.model.FilteredInvoice
 import zuper.dev.android.dashboard.data.model.FilteredJobs
 import zuper.dev.android.dashboard.data.model.InvoiceStatus
 import zuper.dev.android.dashboard.data.model.JobStatus
-import zuper.dev.android.dashboard.ui.theme.AppTheme
-import zuper.dev.android.dashboard.ui.theme.Typography
+import zuper.dev.android.dashboard.presentation.ui.theme.AppTheme
+import zuper.dev.android.dashboard.presentation.ui.theme.Typography
 
 private val utils = Utils()
 
@@ -56,7 +56,8 @@ fun MyCard(modifier: Modifier = Modifier, content: @Composable ColumnScope.() ->
             .fillMaxWidth(),
         colors = CardDefaults.cardColors(Color.White),
         border = BorderStroke(0.5.dp, color = Color.LightGray),
-        shape = RoundedCornerShape(10.dp)
+        shape = RoundedCornerShape(10.dp),
+        elevation = CardDefaults.cardElevation(4.dp)
     ) {
         content()
     }
